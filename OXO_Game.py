@@ -6,47 +6,56 @@ from PyQt5.QtWidgets import*
 from PyQt5.QtCore import*
 from PyQt5.QtGui import*
 from random import*
+from stylesheet import css
+
+
 class OxoGame(QWidget): # inherits from QWidgets
     # parent difines parent widget
     def __init__ (self, parent = None):
         # super class constructor
         QWidget.__init__(self, parent)
         # window name
-        self.setWindowTitle("O X O GAME")
+        self.setWindowTitle("TenElevenGames")
         # backgroung color of the window 
         self.setPalette(QPalette(QColor("white")))
         # x, y, widgth and height
-        self.setGeometry(550, 117, 500, 420)
+        self.setGeometry(550, 117, 500, 350)
+        # game icon
+        self.setWindowIcon(QIcon("gameIcon.png"))
+        # Disable maximizing window
+        self.setWindowFlags(Qt.WindowCloseButtonHint | Qt.WindowMinimizeButtonHint | Qt.CustomizeWindowHint)
+    
 
 
         # Declare variables 
 
         # heading label
-        self.heading  = QLabel("TenElevenGames OXO")
-        self.heading.setFont(QFont("impact", 20, 10))
+        self.heading  = QLabel("OXO Game")
+        self.heading.setFont(QFont("Simplifica", 20, 10))
+        self.heading.setStyleSheet("color: #4A586E ")
         # set the heading label to center
         self.heading.setAlignment(Qt.AlignCenter)
         
         # server label 
-        self.server_input_label = QLabel("Server: ")
+        self.server_input_label = QLabel("Server:") 
         # server input 
         self.server_url_input = QLineEdit()
+        self.server_url_input.setClearButtonEnabled(True)
         self.server_url_input.setPlaceholderText("enter server name")
         # button to connect to server
         self.connect_button = QPushButton("Connect")
+        self.connect_button.clicked.connect(self.connect)
 
-
-        ########################################################################
-        
-
-        ########################################################################
 
         # labels indicating messages from server
-        self.messages_from_server_label = QLabel("-----Messages from server-----")
+        self.messages_from_server_label = QLabel("*** OXO GAME SERVER MESSAGES ***")
         self.messages_from_server_label.setAlignment(Qt.AlignCenter)
         # messages from the server 
-        self.messages_from_server = QTextEdit("*** OXO GAME SERVER STARTED ***  ")
+        self.messages_from_server = QTextEdit("")
         self.messages_from_server.setReadOnly(True) # disable editing the textedit 
+
+
+
 
 
         # character of the player
@@ -57,7 +66,7 @@ class OxoGame(QWidget): # inherits from QWidgets
         self.lst_choice = choice(self.lst) # randomize the icons that will dispaly
 
         # label indicating the players character
-        self.character_label = QLabel("Your Character:")
+        self.character_label = QLabel("Your Shape:")
         self.character_label.setAlignment(Qt.AlignCenter)
 
         # the button to place the character
@@ -71,17 +80,22 @@ class OxoGame(QWidget): # inherits from QWidgets
         self.character.setStyleSheet("background-color: #ECECEC ")
         self.character.setEnabled(True)
 
+
+
+
+
         # button to exit the game 
         self.exit_button = QPushButton("Exit")
-        # button for new game 
-        self.new_game_button = QPushButton("New Game")
+
+
+
 
         # board buttons
         self.board = QGridLayout()
-        self.board.setSpacing(0)
-        self.board.setHorizontalSpacing(0)
-        self.board.setVerticalSpacing(0)
-        
+        #self.board.setSpacing(10)
+        self.board.setHorizontalSpacing(7)
+        self.board.setVerticalSpacing(7)
+        self.counter = 0
         #self.board.setDefaultPositioning()
         for self.column in range(3):
             for self.row in range(3):
@@ -90,13 +104,24 @@ class OxoGame(QWidget): # inherits from QWidgets
                 self.board_play_button.setIconSize(QSize(150, 150))
                 self.board_play_button.setIcon(self.lst_choice)
                 self.board_play_button.setText("")
+                self.board_play_button.setObjectName(str(self.counter))
                 self.board.addWidget(self.board_play_button, self.column, self.row)
+                self.counter += 1
 
         self.board_widget = QWidget()
         self.board_widget.setLayout(self.board)
 
+        self.allButtons = self.board_widget.findChildren(QToolButton)
+
+        for button in self.allButtons:
+            button.clicked.connect(self.buttons)
+
+
+
         ########################## LAY OUT MANAGEMENT ##############################
         
+
+
         # server grid
         self.server_heading_grid = QGridLayout()
         self.server_heading_grid.addWidget(self.heading, 0, 1, 1, 1)
@@ -105,6 +130,9 @@ class OxoGame(QWidget): # inherits from QWidgets
         self.server_heading_grid.addWidget(self.connect_button, 1, 2)
         self.server_heading_grid_widget = QWidget()
         self.server_heading_grid_widget.setLayout(self.server_heading_grid)
+
+
+
 
         # grid layout for player information
         self.detail_character_grid = QGridLayout()
@@ -115,12 +143,17 @@ class OxoGame(QWidget): # inherits from QWidgets
         self.detail_character_grid_widget = QWidget()
         self.detail_character_grid_widget.setLayout(self.detail_character_grid)
 
+
+
+
         # character layout
         self.character_layout = QGridLayout()
         self.character_layout.addWidget(self.character_label, 0, 0)
         self.character_layout.addWidget(self.character, 1, 0)
         self.character_layout_widget  = QWidget()
         self.character_layout_widget.setLayout(self.character_layout)
+
+
 
         #hbox for detail and character
         self.detail = QHBoxLayout()
@@ -131,7 +164,6 @@ class OxoGame(QWidget): # inherits from QWidgets
 
         # the exit and new game horizontal layout 
         self.button_horizontalBox = QHBoxLayout()
-        self.button_horizontalBox.addWidget(self.new_game_button)
         self.button_horizontalBox.addWidget(self.exit_button)
         self.button_horizontalBox_widget = QWidget()
         self.button_horizontalBox_widget.setLayout(self.button_horizontalBox)
@@ -155,69 +187,18 @@ class OxoGame(QWidget): # inherits from QWidgets
         self.main_layout_widget = QWidget()
         self.setLayout(self.main_layout)
 
-# Global styles
-stylesheet = """
-QLabel {
-    font-size: 12px;
-}
-QPushButton {
-    background: #000;
-    border: none;
-    padding: 16px;
-    color: #fff;
-    font-size: 12px;
-}
-QPushButton:pressed {
-    background: #ECECEC;
-    padding: 16px;
-    color: #000;
-    font-size: 12px;
-}
-QToolButton {
-    background: #ECECEC;
-    padding: 16px;
-    outline: none;
-    display: grid;
-    grid-gap: 0px;
+    def buttons(self):
+        self.button = self.sender()
+        self.messages_from_server.append("button " + self.button.objectName() + " clicked")   
 
-}
-QToolButton:pressed {
-    background: #ECECEC;
-    padding: 16px;
-    outline: none;
-    
-    display: grid;
-    grid-gap: 0px;
+    def connect(self):
+        self.messages_from_server.append("connect button clicked")     
 
-}
-QToolBuuton:checked {
-    background: #ECECEC;
-    padding: 16px;
-    outline: none;
-    
-    display: grid;
-    grid-gap: 0px;
-
-}
-QTextEdit {
-    height: 32px;
-    background: #ECECEC; 
-    height: 32px ;
-    outline: none;
-    border: none;
-}
-QLineEdit {
-    background: #ECECEC;
-    padding: 16px;
-    outline: none;
-    border: none;
-}
-"""
 
 
 def main():
     app = QApplication(sys.argv)
-    app.setStyleSheet(stylesheet)
+    app.setStyleSheet(css())
     OXO = OxoGame()
     OXO.show()
     sys.exit(app.exec_())
