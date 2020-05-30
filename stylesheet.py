@@ -8,8 +8,6 @@ def css():
         color: #fff;
         font-size: 12px;
     }
-
-
     QPushButton:pressed {
         background: #ECECEC;
         padding: 16px;
@@ -36,13 +34,14 @@ def css():
     }
     QTextEdit {
         height: 32px;
-        background: #ECECEC; 
+        background: pink; 
         height: 32px ;
         outline: none;
         border: none;
     }
+
     QLineEdit {
-        background: #ECECEC;
+        background: red;
         padding: 16px;
         outline: none;
         border: none;
