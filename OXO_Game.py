@@ -16,6 +16,7 @@ class LoopThread(QThread):
     def run(self):
         while True:
             msg = OXO.receive_message()
+            # emit signal
             if len(msg):self.msg_signal.emit(msg)
 
 class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
