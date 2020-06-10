@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import*
 from PyQt5.QtCore import*
 from PyQt5.QtGui import*
 from time import*
+from PyQt5.QtMultimedia import*
 from GameClient import*
 
 class LoopThread(QThread):
@@ -37,6 +38,10 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
         self.setFixedSize(850, 350)
         # default font
         self.setFont(QFont("arial", 10, weight = QFont.Bold))
+
+        self.sounds = dict(play=QSound("play.wav"),
+                           win=QSound("win.wav"),
+                           lose=QSound("lose.wav"))
     
         # Declare variables 
         # heading label
@@ -210,7 +215,10 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
         self.board_widget.setEnabled(False)
 
     def clear_board(self):
-        pass 
+        for button in self.allButtons:
+            button.setText("")
+            button.setIcon(QIcon())
+            button.setEnabled(True)
 
     # fuction for connect button
     def connect(self):
@@ -225,27 +233,25 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
     # fuction for game board buttons        
     def buttons(self):
         self.button = self.sender()
+        self.sounds["play"].play()
+        # sends the infomation of the clicked button to server
         self.send_message(self.button.objectName())
     
     def input_play_again(self):
-        self.user_response = QMessageBox()
-        self.user_response.setWindowTitle("Game over")
-        self.user_response.setWindowIcon(QIcon("game-over.png"))
-        self.user_response.setText("Do you want to play again?")
-        self.user_response.setIcon(QMessageBox.Question)
-        self.user_response.setStandardButtons(QMessageBox.Yes|QMessageBox.No)
-        self.user_response.buttonClicked.connect(self.results)
-        show_message = self.user_response.exec_()
-
-    def results(self, answer):
-        self.response = answer.text()
-        self.response = self.response[0].lower()
+        # pop up message after the Game is over, asking if the users are willing to play again
+        self.user_response = QMessageBox.question(self,"Game Over","Results\n"+ self.fd +"\nDo you wish to play again?",QMessageBox.Yes|QMessageBox.No)
+        
+        # assign each button to a variable to anable the server to communicate
+        if self.user_response == QMessageBox.Yes:
+            self.feedback = 'y'
+        else:
+            self.feedback = 'n'
 
     def handle_message(self, msg):
         
         # indicates the new game is about to start
         if msg[:msg.find(",")] == "new game":
-
+            self.board_widget.setEnabled(False)
             # gets the shape from the message
             self.shape = msg[-1]
             if self.shape == 'O':
@@ -258,13 +264,13 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
         
         # indicates its the clients move
         elif msg == "your move":
-
+            self.board_widget.setEnabled(True)
             # let the player know its their time to move
             self.messages_from_server.insertPlainText("=>It's your turn to move\n")
   
         # indicates its the opponents move
         elif msg == "opponents move":
-
+            self.board_widget.setEnabled(False)
             # let the player know, the opponent player is about to move
             self.messages_from_server.insertPlainText("=>Waiting for the opponent to move...\n")
             
@@ -294,13 +300,19 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
             
         # indicates that the game is over
         elif msg[:msg.find(",")] == "game over":
-
+            self.board_widget.setEnabled(False)
             # get results for the winner
             self.winner = msg[-1]
 
             # check if the winner is X or O
             if self.winner == "O" or self.winner == "X":
-
+                
+                if self.shape == self.winner:
+                    #self.sounds["win"].play()
+                    self.fd = "YOU WIN"
+                elif self.shape != self.winner:
+                    #self.sounds["lose"].play()
+                    self.fd = "YOU LOST"
                 # return the winner
                 self.messages_from_server.insertPlainText("=>Game Over!\n=>Thank you for playing, the winner is " + self.winner + "\n")
 
@@ -311,26 +323,24 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
             
         # see if the player wants to play again
         elif msg == "play again":
-            # show the pop_message
-            self.input_play_again()
-            # get feedback, if the player still wants rematch
-            self.feedback = self.results("answer")
 
+            # show the pop_message, ask the users if they are willing to play again
+            self.input_play_again()
+            
+            if self.feedback == 'y':
+                self.clear_board()
+            elif self.feedback == 'n':
+                self.close()
             # send feedback to the server
             self.send_message(self.feedback)
 
-            # checks feedback
-            if self.feedback.lower() == "y":
-                
-                # clear board for new game
-                self.clear_board()
         
         # terminate the game
         elif msg == "exit game":
 
             # message displayed if the other player exit game or is taking too long to play
             self.messages_from_server.insertPlainText("=>One of the players does not wish to continue\n")
-
+            self.close()
             # passage time
             sleep(5)
     
@@ -409,6 +419,10 @@ QLineEdit {
     padding: 16px;
     outline: none;
     border: none;
+QMessage {
+    background: #8C8C8C;
+}
+
 }
 """
 app = QApplication(sys.argv)
