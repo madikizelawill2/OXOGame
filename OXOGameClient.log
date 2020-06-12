@@ -1,54 +1,21 @@
-OXO Game Client Started: 2020-06-10 09:58:30.199837
+OXO Game Client Started: 2020-06-12 10:14:39.707951
 Connected To Server: 127.0.0.1
-Connected To Server: 127.0.0.1
-Received Message: new game,X
-Received Message: your move
 Received Message: new game,O
+Received Message: your move
+Received Message: new game,X
 Received Message: opponents move
 Sent Message: 0
-Received Message: valid move,X,0
-Received Message: valid move,X,0
-Received Message: your move
+Received Message: valid move,O,0
 Received Message: opponents move
-Sent Message: 6
-Received Message: valid move,O,6
-Received Message: valid move,O,6
+Received Message: valid move,O,0
 Received Message: your move
-Received Message: opponents move
-Sent Message: 5
-Received Message: valid move,X,5
-Received Message: valid move,X,5
-Received Message: your move
-Received Message: opponents move
 Sent Message: 1
-Received Message: valid move,O,1
-Received Message: valid move,O,1
-Received Message: your move
+Received Message: valid move,X,1
 Received Message: opponents move
-Sent Message: 3
-Received Message: valid move,X,3
-Received Message: opponents move
-Received Message: valid move,X,3
+Received Message: valid move,X,1
 Received Message: your move
 Sent Message: 4
 Received Message: valid move,O,4
+Received Message: opponents move
 Received Message: valid move,O,4
 Received Message: your move
-Received Message: opponents move
-Sent Message: 7
-Received Message: valid move,X,7
-Received Message: opponents move
-Received Message: valid move,X,7
-Received Message: your move
-Sent Message: 8
-Received Message: valid move,O,8
-Received Message: opponents move
-Received Message: valid move,O,8
-Received Message: your move
-Sent Message: 2
-Received Message: valid move,X,2
-Received Message: valid move,X,2
-Received Message: game over,T
-Received Message: game over,T
-Received Message: play again
-Received Message: play again

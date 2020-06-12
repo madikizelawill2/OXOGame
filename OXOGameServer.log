@@ -1,20 +1,7 @@
-OXO Game Server Started: 2020-06-09 11:19:32.580985
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 65245)
-Connected Client 1: ('127.0.0.1', 65322)
-Sent Message Client 0: new game,O
-Sent Message Client 1: new game,X
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
-
-Game Server is being restarted.
-
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 49204)
-Connected Client 1: ('127.0.0.1', 49212)
+OXO Game Server Started: 2020-06-12 09:55:19.368164
+OXO Game Server Ended: 2020-06-12 09:55:19.378139
+Connected Client 0: ('127.0.0.1', 50616)
+Connected Client 1: ('127.0.0.1', 50621)
 Sent Message Client 0: new game,O
 Sent Message Client 1: new game,X
 Sent Message Client 0: your move
@@ -24,636 +11,48 @@ Sent Message Client 0: valid move,O,0
 Sent Message Client 1: valid move,O,0
 Sent Message Client 1: your move
 Sent Message Client 0: opponents move
-ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
-
-Game Server is being restarted.
-
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 49332)
-Connected Client 1: ('127.0.0.1', 49344)
-Sent Message Client 0: new game,X
-Sent Message Client 1: new game,O
+Received Message Client 1: 1
+Sent Message Client 1: valid move,X,1
+Sent Message Client 0: valid move,X,1
 Sent Message Client 0: your move
 Sent Message Client 1: opponents move
-Received Message Client 0: 0
-Sent Message Client 0: valid move,X,0
-Sent Message Client 1: valid move,X,0
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 2
-Sent Message Client 1: valid move,O,2
-Sent Message Client 0: valid move,O,2
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 4
-Sent Message Client 0: valid move,X,4
-Sent Message Client 1: valid move,X,4
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 8
-Sent Message Client 1: valid move,O,8
-Sent Message Client 0: valid move,O,8
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 5
-Sent Message Client 0: valid move,X,5
-Sent Message Client 1: valid move,X,5
+Received Message Client 0: 6
+Sent Message Client 0: valid move,O,6
+Sent Message Client 1: valid move,O,6
 Sent Message Client 1: your move
 Sent Message Client 0: opponents move
 Received Message Client 1: 3
-Sent Message Client 1: valid move,O,3
-Sent Message Client 0: valid move,O,3
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 1
-Sent Message Client 0: valid move,X,1
-Sent Message Client 1: valid move,X,1
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 6
-Sent Message Client 1: valid move,O,6
-Sent Message Client 0: valid move,O,6
+Sent Message Client 1: valid move,X,3
+Sent Message Client 0: valid move,X,3
 Sent Message Client 0: your move
 Sent Message Client 1: opponents move
 Received Message Client 0: 7
-Sent Message Client 0: valid move,X,7
-Sent Message Client 1: valid move,X,7
-Sent Message Client 1: game over,X
-Sent Message Client 0: game over,X
-Sent Message Client 1: play again
-Sent Message Client 0: play again
-ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
-
-Game Server is being restarted.
-
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 51088)
-Connected Client 1: ('127.0.0.1', 51098)
-Sent Message Client 0: new game,O
-Sent Message Client 1: new game,X
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 0
-Sent Message Client 0: valid move,O,0
-Sent Message Client 1: valid move,O,0
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 6
-Sent Message Client 1: valid move,X,6
-Sent Message Client 0: valid move,X,6
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 2
-Sent Message Client 0: valid move,O,2
-Sent Message Client 1: valid move,O,2
+Sent Message Client 0: valid move,O,7
+Sent Message Client 1: valid move,O,7
 Sent Message Client 1: your move
 Sent Message Client 0: opponents move
 Received Message Client 1: 4
 Sent Message Client 1: valid move,X,4
 Sent Message Client 0: valid move,X,4
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 1
-Sent Message Client 0: valid move,O,1
-Sent Message Client 1: valid move,O,1
-Sent Message Client 1: game over,O
-Sent Message Client 0: game over,O
-Sent Message Client 1: play again
-Sent Message Client 0: play again
-ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
-
-Game Server is being restarted.
-
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 51172)
-Connected Client 1: ('127.0.0.1', 51185)
-Sent Message Client 1: new game,O
-Sent Message Client 0: new game,X
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 0
-Sent Message Client 1: valid move,O,0
-Sent Message Client 0: valid move,O,0
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 1
-Sent Message Client 0: valid move,X,1
-Sent Message Client 1: valid move,X,1
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 3
-Sent Message Client 1: valid move,O,3
-Sent Message Client 0: valid move,O,3
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 2
-Sent Message Client 0: valid move,X,2
-Sent Message Client 1: valid move,X,2
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 6
-Sent Message Client 1: valid move,O,6
-Sent Message Client 0: valid move,O,6
-Sent Message Client 0: game over,O
-Sent Message Client 1: game over,O
-Sent Message Client 0: play again
-Sent Message Client 1: play again
-Received Message Client 0: y
-Received Message Client 1: y
-Sent Message Client 0: new game,O
-Sent Message Client 1: new game,X
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
-
-Game Server is being restarted.
-
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 51794)
-Connected Client 1: ('127.0.0.1', 51812)
-Sent Message Client 1: new game,O
-Sent Message Client 0: new game,X
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 0
-Sent Message Client 1: valid move,O,0
-Sent Message Client 0: valid move,O,0
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 0
-Sent Message Client 0: invalid move
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 3
-Sent Message Client 0: valid move,X,3
-Sent Message Client 1: valid move,X,3
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 6
-Sent Message Client 1: valid move,O,6
-Sent Message Client 0: valid move,O,6
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 4
-Sent Message Client 0: valid move,X,4
-Sent Message Client 1: valid move,X,4
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 2
-Sent Message Client 1: valid move,O,2
-Sent Message Client 0: valid move,O,2
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 5
-Sent Message Client 0: valid move,X,5
-Sent Message Client 1: valid move,X,5
-Sent Message Client 1: game over,X
-Sent Message Client 0: game over,X
-Sent Message Client 1: play again
-Sent Message Client 0: play again
-Received Message Client 1: y
-Received Message Client 0: n
-Sent Message Client 1: exit game
-Sent Message Client 0: exit game
-Closed Client 0: ('127.0.0.1', 51794)
-Closed Client 1: ('127.0.0.1', 51812)
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 53903)
-Connected Client 1: ('127.0.0.1', 53912)
-Sent Message Client 1: new game,O
-Sent Message Client 0: new game,X
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 0
-Sent Message Client 1: valid move,O,0
-Sent Message Client 0: valid move,O,0
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 2
-Sent Message Client 0: valid move,X,2
-Sent Message Client 1: valid move,X,2
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 3
-Sent Message Client 1: valid move,O,3
-Sent Message Client 0: valid move,O,3
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 5
-Sent Message Client 0: valid move,X,5
-Sent Message Client 1: valid move,X,5
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 6
-Sent Message Client 1: valid move,O,6
-Sent Message Client 0: valid move,O,6
-Sent Message Client 0: game over,O
-Sent Message Client 1: game over,O
-Sent Message Client 0: play again
-Sent Message Client 1: play again
-ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
-
-Game Server is being restarted.
-
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 54062)
-Connected Client 1: ('127.0.0.1', 54075)
-Sent Message Client 0: new game,O
-Sent Message Client 1: new game,X
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 0
-Sent Message Client 0: valid move,O,0
-Sent Message Client 1: valid move,O,0
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 6
-Sent Message Client 1: valid move,X,6
-Sent Message Client 0: valid move,X,6
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 1
-Sent Message Client 0: valid move,O,1
-Sent Message Client 1: valid move,O,1
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 5
-Sent Message Client 1: valid move,X,5
-Sent Message Client 0: valid move,X,5
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 2
-Sent Message Client 0: valid move,O,2
-Sent Message Client 1: valid move,O,2
-Sent Message Client 1: game over,O
-Sent Message Client 0: game over,O
-Sent Message Client 1: play again
-Sent Message Client 0: play again
-Received Message Client 1: y
-Received Message Client 0: y
-Sent Message Client 0: new game,O
-Sent Message Client 1: new game,X
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 3
-Sent Message Client 0: valid move,O,3
-Sent Message Client 1: valid move,O,3
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 7
-Sent Message Client 1: valid move,X,7
-Sent Message Client 0: valid move,X,7
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 4
-Sent Message Client 0: valid move,O,4
-Sent Message Client 1: valid move,O,4
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 8
-Sent Message Client 1: valid move,X,8
-Sent Message Client 0: valid move,X,8
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
-
-Game Server is being restarted.
-
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 61366)
-Connected Client 1: ('127.0.0.1', 61377)
-Sent Message Client 1: new game,X
-Sent Message Client 0: new game,O
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 0
-Sent Message Client 1: valid move,X,0
-Sent Message Client 0: valid move,X,0
 Sent Message Client 0: your move
 Sent Message Client 1: opponents move
 Received Message Client 0: 8
 Sent Message Client 0: valid move,O,8
 Sent Message Client 1: valid move,O,8
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 2
-Sent Message Client 1: valid move,X,2
-Sent Message Client 0: valid move,X,2
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 6
-Sent Message Client 0: valid move,O,6
-Sent Message Client 1: valid move,O,6
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 4
-Sent Message Client 1: valid move,X,4
-Sent Message Client 0: valid move,X,4
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 3
-Sent Message Client 0: valid move,O,3
-Sent Message Client 1: valid move,O,3
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 5
-Sent Message Client 1: valid move,X,5
-Sent Message Client 0: valid move,X,5
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 7
-Sent Message Client 0: valid move,O,7
-Sent Message Client 1: valid move,O,7
-Sent Message Client 1: game over,O
-Sent Message Client 0: game over,O
-Sent Message Client 1: play again
-Sent Message Client 0: play again
-Received Message Client 1: y
-Received Message Client 0: y
-Sent Message Client 0: new game,X
-Sent Message Client 1: new game,O
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
-
-Game Server is being restarted.
-
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 61897)
-Connected Client 1: ('127.0.0.1', 61919)
-Sent Message Client 0: new game,X
-Sent Message Client 1: new game,O
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 0
-Sent Message Client 0: valid move,X,0
-Sent Message Client 1: valid move,X,0
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 1
-Sent Message Client 1: valid move,O,1
-Sent Message Client 0: valid move,O,1
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 3
-Sent Message Client 0: valid move,X,3
-Sent Message Client 1: valid move,X,3
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 4
-Sent Message Client 1: valid move,O,4
-Sent Message Client 0: valid move,O,4
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 6
-Sent Message Client 0: valid move,X,6
-Sent Message Client 1: valid move,X,6
-Sent Message Client 1: game over,X
-Sent Message Client 0: game over,X
-Sent Message Client 1: play again
-Sent Message Client 0: play again
-Received Message Client 1: y
-Received Message Client 0: y
-Sent Message Client 1: new game,O
-Sent Message Client 0: new game,X
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
-
-Game Server is being restarted.
-
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 62131)
-Connected Client 1: ('127.0.0.1', 62150)
-Sent Message Client 1: new game,X
-Sent Message Client 0: new game,O
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 0
-Sent Message Client 1: valid move,X,0
-Sent Message Client 0: valid move,X,0
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 1
-Sent Message Client 0: valid move,O,1
-Sent Message Client 1: valid move,O,1
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 2
-Sent Message Client 1: valid move,X,2
-Sent Message Client 0: valid move,X,2
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 4
-Sent Message Client 0: valid move,O,4
-Sent Message Client 1: valid move,O,4
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 6
-Sent Message Client 1: valid move,X,6
-Sent Message Client 0: valid move,X,6
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 5
-Sent Message Client 0: valid move,O,5
-Sent Message Client 1: valid move,O,5
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 3
-Sent Message Client 1: valid move,X,3
-Sent Message Client 0: valid move,X,3
-Sent Message Client 0: game over,X
-Sent Message Client 1: game over,X
-Sent Message Client 0: play again
-Sent Message Client 1: play again
-ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
-
-Game Server is being restarted.
-
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 63416)
-Connected Client 1: ('127.0.0.1', 63476)
-Sent Message Client 1: new game,X
-ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
-
-Game Server is being restarted.
-
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 63491)
-Connected Client 1: ('127.0.0.1', 63510)
-Sent Message Client 1: new game,X
-Sent Message Client 0: new game,O
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 0
-Sent Message Client 1: valid move,X,0
-Sent Message Client 0: valid move,X,0
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 2
-Sent Message Client 0: valid move,O,2
-Sent Message Client 1: valid move,O,2
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 6
-Sent Message Client 1: valid move,X,6
-Sent Message Client 0: valid move,X,6
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 4
-Sent Message Client 0: valid move,O,4
-Sent Message Client 1: valid move,O,4
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 3
-Sent Message Client 1: valid move,X,3
-Sent Message Client 0: valid move,X,3
-Sent Message Client 0: game over,X
-Sent Message Client 1: game over,X
-Sent Message Client 0: play again
-Sent Message Client 1: play again
-Received Message Client 0: y
-Received Message Client 1: y
-Sent Message Client 0: new game,X
-Sent Message Client 1: new game,O
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 0
-Sent Message Client 0: valid move,X,0
-Sent Message Client 1: valid move,X,0
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 8
-Sent Message Client 1: valid move,O,8
-Sent Message Client 0: valid move,O,8
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 2
-Sent Message Client 0: valid move,X,2
-Sent Message Client 1: valid move,X,2
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 6
-Sent Message Client 1: valid move,O,6
-Sent Message Client 0: valid move,O,6
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 1
-Sent Message Client 0: valid move,X,1
-Sent Message Client 1: valid move,X,1
-Sent Message Client 1: game over,X
-Sent Message Client 0: game over,X
-Sent Message Client 1: play again
-Sent Message Client 0: play again
-Received Message Client 1: y
-Received Message Client 0: y
-Sent Message Client 0: new game,X
-Sent Message Client 1: new game,O
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 0
-Sent Message Client 0: valid move,X,0
-Sent Message Client 1: valid move,X,0
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 6
-Sent Message Client 1: valid move,O,6
-Sent Message Client 0: valid move,O,6
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 1
-Sent Message Client 0: valid move,X,1
-Sent Message Client 1: valid move,X,1
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 7
-Sent Message Client 1: valid move,O,7
-Sent Message Client 0: valid move,O,7
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 2
-Sent Message Client 0: valid move,X,2
-Sent Message Client 1: valid move,X,2
-Sent Message Client 1: game over,X
-Sent Message Client 0: game over,X
-Sent Message Client 1: play again
-Sent Message Client 0: play again
-Received Message Client 1: y
-ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
-
-Game Server is being restarted.
-
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 49169)
-Connected Client 1: ('127.0.0.1', 49184)
-Sent Message Client 1: new game,X
-Sent Message Client 0: new game,O
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 0
-Sent Message Client 1: valid move,X,0
-Sent Message Client 0: valid move,X,0
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 4
-Sent Message Client 0: valid move,O,4
-Sent Message Client 1: valid move,O,4
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 8
-Sent Message Client 1: valid move,X,8
-Sent Message Client 0: valid move,X,8
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 3
-Sent Message Client 0: valid move,O,3
-Sent Message Client 1: valid move,O,3
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 2
-Sent Message Client 1: valid move,X,2
-Sent Message Client 0: valid move,X,2
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 1
-Sent Message Client 0: valid move,O,1
-Sent Message Client 1: valid move,O,1
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 6
-Sent Message Client 1: valid move,X,6
-Sent Message Client 0: valid move,X,6
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 7
-Sent Message Client 0: valid move,O,7
-Sent Message Client 1: valid move,O,7
 Sent Message Client 1: game over,O
 Sent Message Client 0: game over,O
 Sent Message Client 1: play again
 Sent Message Client 0: play again
 Received Message Client 1: n
-Received Message Client 0: y
+Received Message Client 0: n
 ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
 
 Game Server is being restarted.
 
 *** OXO GAME SERVER STARTED ***
 Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 49474)
-Connected Client 1: ('127.0.0.1', 49495)
+Connected Client 0: ('127.0.0.1', 50681)
+Connected Client 1: ('127.0.0.1', 50686)
 Sent Message Client 0: new game,X
 Sent Message Client 1: new game,O
 Sent Message Client 0: your move
@@ -663,641 +62,222 @@ Sent Message Client 0: valid move,X,0
 Sent Message Client 1: valid move,X,0
 Sent Message Client 1: your move
 Sent Message Client 0: opponents move
-Received Message Client 1: 8
-Sent Message Client 1: valid move,O,8
-Sent Message Client 0: valid move,O,8
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 6
-Sent Message Client 0: valid move,X,6
-Sent Message Client 1: valid move,X,6
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 3
-Sent Message Client 1: valid move,O,3
-Sent Message Client 0: valid move,O,3
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 2
-Sent Message Client 0: valid move,X,2
-Sent Message Client 1: valid move,X,2
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 4
-Sent Message Client 1: valid move,O,4
-Sent Message Client 0: valid move,O,4
+Received Message Client 1: 6
+Sent Message Client 1: valid move,O,6
+Sent Message Client 0: valid move,O,6
 Sent Message Client 0: your move
 Sent Message Client 1: opponents move
 Received Message Client 0: 1
 Sent Message Client 0: valid move,X,1
 Sent Message Client 1: valid move,X,1
+Sent Message Client 1: your move
+Sent Message Client 0: opponents move
+Received Message Client 1: 2
+Sent Message Client 1: valid move,O,2
+Sent Message Client 0: valid move,O,2
+Sent Message Client 0: your move
+Sent Message Client 1: opponents move
+Received Message Client 0: 3
+Sent Message Client 0: valid move,X,3
+Sent Message Client 1: valid move,X,3
+Sent Message Client 1: your move
+Sent Message Client 0: opponents move
+Received Message Client 1: 5
+Sent Message Client 1: valid move,O,5
+Sent Message Client 0: valid move,O,5
+Sent Message Client 0: your move
+Sent Message Client 1: opponents move
+Received Message Client 0: 4
+Sent Message Client 0: valid move,X,4
+Sent Message Client 1: valid move,X,4
+Sent Message Client 1: your move
+Sent Message Client 0: opponents move
+Received Message Client 1: 7
+Sent Message Client 1: valid move,O,7
+Sent Message Client 0: valid move,O,7
+Sent Message Client 0: your move
+Sent Message Client 1: opponents move
+Received Message Client 0: 8
+Sent Message Client 0: valid move,X,8
+Sent Message Client 1: valid move,X,8
 Sent Message Client 1: game over,X
 Sent Message Client 0: game over,X
+Sent Message Client 1: play again
+Sent Message Client 0: play again
+Received Message Client 1: y
+Received Message Client 0: y
+Sent Message Client 0: new game,O
+Sent Message Client 1: new game,X
+Sent Message Client 0: your move
+Sent Message Client 1: opponents move
+Received Message Client 0: 0
+Sent Message Client 0: valid move,O,0
+Sent Message Client 1: valid move,O,0
+Sent Message Client 1: your move
+Sent Message Client 0: opponents move
+Received Message Client 1: 6
+Sent Message Client 1: valid move,X,6
+Sent Message Client 0: valid move,X,6
+Sent Message Client 0: your move
+Sent Message Client 1: opponents move
+Received Message Client 0: 2
+Sent Message Client 0: valid move,O,2
+Sent Message Client 1: valid move,O,2
+Sent Message Client 1: your move
+Sent Message Client 0: opponents move
+Received Message Client 1: 1
+Sent Message Client 1: valid move,X,1
+Sent Message Client 0: valid move,X,1
+Sent Message Client 0: your move
+Sent Message Client 1: opponents move
+Received Message Client 0: 8
+Sent Message Client 0: valid move,O,8
+Sent Message Client 1: valid move,O,8
+Sent Message Client 1: your move
+Sent Message Client 0: opponents move
+Received Message Client 1: 5
+Sent Message Client 1: valid move,X,5
+Sent Message Client 0: valid move,X,5
+Sent Message Client 0: your move
+Sent Message Client 1: opponents move
+Received Message Client 0: 7
+Sent Message Client 0: valid move,O,7
+Sent Message Client 1: valid move,O,7
+Sent Message Client 1: your move
+Sent Message Client 0: opponents move
+Received Message Client 1: 4
+Sent Message Client 1: valid move,X,4
+Sent Message Client 0: valid move,X,4
+Sent Message Client 0: your move
+Sent Message Client 1: opponents move
+Received Message Client 0: 3
+Sent Message Client 0: valid move,O,3
+Sent Message Client 1: valid move,O,3
+Sent Message Client 1: game over,T
+Sent Message Client 0: game over,T
 Sent Message Client 1: play again
 Sent Message Client 0: play again
 Received Message Client 1: n
-Received Message Client 0: y
-Sent Message Client 1: exit game
-Sent Message Client 0: exit game
-Closed Client 0: ('127.0.0.1', 49474)
-Closed Client 1: ('127.0.0.1', 49495)
+ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
+
+Game Server is being restarted.
+
 *** OXO GAME SERVER STARTED ***
 Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 49580)
-Connected Client 1: ('127.0.0.1', 49597)
-Sent Message Client 1: new game,X
-Sent Message Client 0: new game,O
+Connected Client 0: ('127.0.0.1', 51019)
+Connected Client 1: ('127.0.0.1', 51022)
+Sent Message Client 1: new game,O
+Sent Message Client 0: new game,X
 Sent Message Client 1: your move
 Sent Message Client 0: opponents move
 Received Message Client 1: 0
-Sent Message Client 1: valid move,X,0
-Sent Message Client 0: valid move,X,0
+Sent Message Client 1: valid move,O,0
+Sent Message Client 0: valid move,O,0
 Sent Message Client 0: your move
 Sent Message Client 1: opponents move
-Received Message Client 0: 2
-Sent Message Client 0: valid move,O,2
-Sent Message Client 1: valid move,O,2
+Received Message Client 0: 8
+Sent Message Client 0: valid move,X,8
+Sent Message Client 1: valid move,X,8
 Sent Message Client 1: your move
 Sent Message Client 0: opponents move
-Received Message Client 1: 1
-Sent Message Client 1: valid move,X,1
-Sent Message Client 0: valid move,X,1
+Received Message Client 1: 6
+Sent Message Client 1: valid move,O,6
+Sent Message Client 0: valid move,O,6
 Sent Message Client 0: your move
 Sent Message Client 1: opponents move
 Received Message Client 0: 3
-Sent Message Client 0: valid move,O,3
-Sent Message Client 1: valid move,O,3
+Sent Message Client 0: valid move,X,3
+Sent Message Client 1: valid move,X,3
 Sent Message Client 1: your move
 Sent Message Client 0: opponents move
-Received Message Client 1: 4
-Sent Message Client 1: valid move,X,4
-Sent Message Client 0: valid move,X,4
+Received Message Client 1: 2
+Sent Message Client 1: valid move,O,2
+Sent Message Client 0: valid move,O,2
 Sent Message Client 0: your move
 Sent Message Client 1: opponents move
-Received Message Client 0: 5
-Sent Message Client 0: valid move,O,5
+Received Message Client 0: 1
+Sent Message Client 0: valid move,X,1
+Sent Message Client 1: valid move,X,1
+Sent Message Client 1: your move
+Sent Message Client 0: opponents move
+Received Message Client 1: 5
 Sent Message Client 1: valid move,O,5
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 6
-Sent Message Client 1: valid move,X,6
-Sent Message Client 0: valid move,X,6
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 7
-Sent Message Client 0: valid move,O,7
-Sent Message Client 1: valid move,O,7
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 8
-Sent Message Client 1: valid move,X,8
-Sent Message Client 0: valid move,X,8
-Sent Message Client 0: game over,X
-Sent Message Client 1: game over,X
-Sent Message Client 0: play again
-Sent Message Client 1: play again
-Received Message Client 0: n
-Received Message Client 1: y
-Sent Message Client 0: exit game
-Sent Message Client 1: exit game
-Closed Client 0: ('127.0.0.1', 49580)
-Closed Client 1: ('127.0.0.1', 49597)
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 49629)
-Connected Client 1: ('127.0.0.1', 49641)
-Sent Message Client 1: new game,X
-Sent Message Client 0: new game,O
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 0
-Sent Message Client 1: valid move,X,0
-Sent Message Client 0: valid move,X,0
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 3
-Sent Message Client 0: valid move,O,3
-Sent Message Client 1: valid move,O,3
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 6
-Sent Message Client 1: valid move,X,6
-Sent Message Client 0: valid move,X,6
+Sent Message Client 0: valid move,O,5
 Sent Message Client 0: your move
 Sent Message Client 1: opponents move
 Received Message Client 0: 4
-Sent Message Client 0: valid move,O,4
-Sent Message Client 1: valid move,O,4
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 7
-Sent Message Client 1: valid move,X,7
-Sent Message Client 0: valid move,X,7
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 2
-Sent Message Client 0: valid move,O,2
-Sent Message Client 1: valid move,O,2
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 5
-Sent Message Client 1: valid move,X,5
-Sent Message Client 0: valid move,X,5
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 1
-Sent Message Client 0: valid move,O,1
-Sent Message Client 1: valid move,O,1
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 8
-Sent Message Client 1: valid move,X,8
-Sent Message Client 0: valid move,X,8
-Sent Message Client 0: game over,X
-Sent Message Client 1: game over,X
-Sent Message Client 0: play again
-Sent Message Client 1: play again
-Received Message Client 0: y
-ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
-
-Game Server is being restarted.
-
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 49683)
-Connected Client 1: ('127.0.0.1', 49708)
-Sent Message Client 1: new game,X
-Sent Message Client 0: new game,O
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 0
-Sent Message Client 1: valid move,X,0
-Sent Message Client 0: valid move,X,0
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 1
-Sent Message Client 0: valid move,O,1
-Sent Message Client 1: valid move,O,1
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 7
-Sent Message Client 1: valid move,X,7
-Sent Message Client 0: valid move,X,7
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 2
-Sent Message Client 0: valid move,O,2
-Sent Message Client 1: valid move,O,2
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 6
-Sent Message Client 1: valid move,X,6
-Sent Message Client 0: valid move,X,6
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 4
-Sent Message Client 0: valid move,O,4
-Sent Message Client 1: valid move,O,4
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 3
-Sent Message Client 1: valid move,X,3
-Sent Message Client 0: valid move,X,3
-Sent Message Client 0: game over,X
-Sent Message Client 1: game over,X
-Sent Message Client 0: play again
-Sent Message Client 1: play again
-Received Message Client 0: y
-ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
-
-Game Server is being restarted.
-
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 50237)
-Connected Client 1: ('127.0.0.1', 50251)
-Sent Message Client 0: new game,O
-Sent Message Client 1: new game,X
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 0
-Sent Message Client 0: valid move,O,0
-Sent Message Client 1: valid move,O,0
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 3
-Sent Message Client 1: valid move,X,3
-Sent Message Client 0: valid move,X,3
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 6
-Sent Message Client 0: valid move,O,6
-Sent Message Client 1: valid move,O,6
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 4
-Sent Message Client 1: valid move,X,4
 Sent Message Client 0: valid move,X,4
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 1
-Sent Message Client 0: valid move,O,1
-Sent Message Client 1: valid move,O,1
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 5
-Sent Message Client 1: valid move,X,5
-Sent Message Client 0: valid move,X,5
-Sent Message Client 0: game over,X
-Sent Message Client 1: game over,X
-Sent Message Client 0: play again
-Sent Message Client 1: play again
-Received Message Client 0: n
-Received Message Client 1: y
-Sent Message Client 0: exit game
-Sent Message Client 1: exit game
-Closed Client 0: ('127.0.0.1', 50237)
-Closed Client 1: ('127.0.0.1', 50251)
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 50331)
-Connected Client 1: ('127.0.0.1', 50344)
-Sent Message Client 1: new game,X
-Sent Message Client 0: new game,O
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 0
-Sent Message Client 1: valid move,X,0
-Sent Message Client 0: valid move,X,0
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 1
-Sent Message Client 0: valid move,O,1
-Sent Message Client 1: valid move,O,1
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 3
-Sent Message Client 1: valid move,X,3
-Sent Message Client 0: valid move,X,3
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 4
-Sent Message Client 0: valid move,O,4
-Sent Message Client 1: valid move,O,4
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 6
-Sent Message Client 1: valid move,X,6
-Sent Message Client 0: valid move,X,6
-Sent Message Client 0: game over,X
-Sent Message Client 1: game over,X
-Sent Message Client 0: play again
-Sent Message Client 1: play again
-ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
-
-Game Server is being restarted.
-
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 50660)
-Connected Client 1: ('127.0.0.1', 50676)
-Sent Message Client 1: new game,X
-Sent Message Client 0: new game,O
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 0
-Sent Message Client 1: valid move,X,0
-Sent Message Client 0: valid move,X,0
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 1
-Sent Message Client 0: valid move,O,1
-Sent Message Client 1: valid move,O,1
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 3
-Sent Message Client 1: valid move,X,3
-Sent Message Client 0: valid move,X,3
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 4
-Sent Message Client 0: valid move,O,4
-Sent Message Client 1: valid move,O,4
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 6
-Sent Message Client 1: valid move,X,6
-Sent Message Client 0: valid move,X,6
-Sent Message Client 0: game over,X
-Sent Message Client 1: game over,X
-Sent Message Client 0: play again
-Sent Message Client 1: play again
-ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
-
-Game Server is being restarted.
-
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 52238)
-Connected Client 1: ('127.0.0.1', 52243)
-Sent Message Client 0: new game,X
-Sent Message Client 1: new game,O
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 0
-Sent Message Client 0: valid move,X,0
-Sent Message Client 1: valid move,X,0
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 1
-Sent Message Client 1: valid move,O,1
-Sent Message Client 0: valid move,O,1
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 3
-Sent Message Client 0: valid move,X,3
-Sent Message Client 1: valid move,X,3
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 4
-Sent Message Client 1: valid move,O,4
-Sent Message Client 0: valid move,O,4
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 6
-Sent Message Client 0: valid move,X,6
-Sent Message Client 1: valid move,X,6
-Sent Message Client 1: game over,X
-Sent Message Client 0: game over,X
-Sent Message Client 1: play again
-Sent Message Client 0: play again
-ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
-
-Game Server is being restarted.
-
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 52325)
-Connected Client 1: ('127.0.0.1', 52339)
-Sent Message Client 1: new game,X
-Sent Message Client 0: new game,O
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 0
-Sent Message Client 1: valid move,X,0
-Sent Message Client 0: valid move,X,0
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 2
-Sent Message Client 0: valid move,O,2
-Sent Message Client 1: valid move,O,2
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 3
-Sent Message Client 1: valid move,X,3
-Sent Message Client 0: valid move,X,3
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 7
-Sent Message Client 0: valid move,O,7
-Sent Message Client 1: valid move,O,7
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 6
-Sent Message Client 1: valid move,X,6
-Sent Message Client 0: valid move,X,6
-Sent Message Client 0: game over,X
-Sent Message Client 1: game over,X
-Sent Message Client 0: play again
-Sent Message Client 1: play again
-Received Message Client 0: y
-Received Message Client 1: y
-Sent Message Client 1: new game,X
-Sent Message Client 0: new game,O
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 0
-Sent Message Client 1: valid move,X,0
-Sent Message Client 0: valid move,X,0
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 6
-Sent Message Client 0: valid move,O,6
-Sent Message Client 1: valid move,O,6
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 2
-Sent Message Client 1: valid move,X,2
-Sent Message Client 0: valid move,X,2
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 7
-Sent Message Client 0: valid move,O,7
-Sent Message Client 1: valid move,O,7
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 4
 Sent Message Client 1: valid move,X,4
-Sent Message Client 0: valid move,X,4
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 8
-Sent Message Client 0: valid move,O,8
-Sent Message Client 1: valid move,O,8
-Sent Message Client 1: game over,O
-Sent Message Client 0: game over,O
-Sent Message Client 1: play again
-Sent Message Client 0: play again
-Received Message Client 1: y
-ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
-
-Game Server is being restarted.
-
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 53254)
-Connected Client 1: ('127.0.0.1', 53274)
-Sent Message Client 1: new game,O
-Sent Message Client 0: new game,X
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 0
-Sent Message Client 1: valid move,O,0
-Sent Message Client 0: valid move,O,0
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 1
-Sent Message Client 0: valid move,X,1
-Sent Message Client 1: valid move,X,1
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 3
-Sent Message Client 1: valid move,O,3
-Sent Message Client 0: valid move,O,3
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 2
-Sent Message Client 0: valid move,X,2
-Sent Message Client 1: valid move,X,2
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 6
-Sent Message Client 1: valid move,O,6
-Sent Message Client 0: valid move,O,6
-Sent Message Client 0: game over,O
-Sent Message Client 1: game over,O
-Sent Message Client 0: play again
-Sent Message Client 1: play again
-Received Message Client 0: n
-Received Message Client 1: y
-Sent Message Client 0: exit game
-Sent Message Client 1: exit game
-Closed Client 0: ('127.0.0.1', 53254)
-Closed Client 1: ('127.0.0.1', 53274)
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 54037)
-Connected Client 1: ('127.0.0.1', 54052)
-Sent Message Client 1: new game,X
-Sent Message Client 0: new game,O
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 0
-Sent Message Client 1: valid move,X,0
-Sent Message Client 0: valid move,X,0
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 1
-Sent Message Client 0: valid move,O,1
-Sent Message Client 1: valid move,O,1
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 6
-Sent Message Client 1: valid move,X,6
-Sent Message Client 0: valid move,X,6
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 2
-Sent Message Client 0: valid move,O,2
-Sent Message Client 1: valid move,O,2
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 3
-Sent Message Client 1: valid move,X,3
-Sent Message Client 0: valid move,X,3
-Sent Message Client 0: game over,X
-Sent Message Client 1: game over,X
-Sent Message Client 0: play again
-Sent Message Client 1: play again
-Received Message Client 0: n
-ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
-
-Game Server is being restarted.
-
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 54246)
-Connected Client 1: ('127.0.0.1', 54267)
-Sent Message Client 1: new game,X
-Sent Message Client 0: new game,O
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 0
-Sent Message Client 1: valid move,X,0
-Sent Message Client 0: valid move,X,0
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 1
-Sent Message Client 0: valid move,O,1
-Sent Message Client 1: valid move,O,1
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 3
-Sent Message Client 1: valid move,X,3
-Sent Message Client 0: valid move,X,3
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 2
-Sent Message Client 0: valid move,O,2
-Sent Message Client 1: valid move,O,2
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 6
-Sent Message Client 1: valid move,X,6
-Sent Message Client 0: valid move,X,6
-Sent Message Client 0: game over,X
-Sent Message Client 1: game over,X
-Sent Message Client 0: play again
-Sent Message Client 1: play again
-Received Message Client 0: n
-ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
-
-Game Server is being restarted.
-
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 55405)
-Connected Client 1: ('127.0.0.1', 55730)
-Sent Message Client 1: new game,O
-ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
-
-Game Server is being restarted.
-
-*** OXO GAME SERVER STARTED ***
-Waiting for client connections.
-Connected Client 0: ('127.0.0.1', 55780)
-Connected Client 1: ('127.0.0.1', 55787)
-Sent Message Client 1: new game,X
-Sent Message Client 0: new game,O
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 0
-Sent Message Client 1: valid move,X,0
-Sent Message Client 0: valid move,X,0
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 6
-Sent Message Client 0: valid move,O,6
-Sent Message Client 1: valid move,O,6
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 5
-Sent Message Client 1: valid move,X,5
-Sent Message Client 0: valid move,X,5
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 1
-Sent Message Client 0: valid move,O,1
-Sent Message Client 1: valid move,O,1
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 3
-Sent Message Client 1: valid move,X,3
-Sent Message Client 0: valid move,X,3
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 4
-Sent Message Client 0: valid move,O,4
-Sent Message Client 1: valid move,O,4
 Sent Message Client 1: your move
 Sent Message Client 0: opponents move
 Received Message Client 1: 7
-Sent Message Client 1: valid move,X,7
-Sent Message Client 0: valid move,X,7
-Sent Message Client 0: your move
-Sent Message Client 1: opponents move
-Received Message Client 0: 8
-Sent Message Client 0: valid move,O,8
-Sent Message Client 1: valid move,O,8
-Sent Message Client 1: your move
-Sent Message Client 0: opponents move
-Received Message Client 1: 2
-Sent Message Client 1: valid move,X,2
-Sent Message Client 0: valid move,X,2
+Sent Message Client 1: valid move,O,7
+Sent Message Client 0: valid move,O,7
 Sent Message Client 0: game over,T
 Sent Message Client 1: game over,T
 Sent Message Client 0: play again
 Sent Message Client 1: play again
+Received Message Client 0: y
+Received Message Client 1: y
+Sent Message Client 1: new game,X
+Sent Message Client 0: new game,O
+Sent Message Client 1: your move
+Sent Message Client 0: opponents move
+Received Message Client 1: 0
+Sent Message Client 1: valid move,X,0
+Sent Message Client 0: valid move,X,0
+Sent Message Client 0: your move
+Sent Message Client 1: opponents move
+Received Message Client 0: 3
+Sent Message Client 0: valid move,O,3
+Sent Message Client 1: valid move,O,3
+Sent Message Client 1: your move
+Sent Message Client 0: opponents move
+Received Message Client 1: 1
+Sent Message Client 1: valid move,X,1
+Sent Message Client 0: valid move,X,1
+Sent Message Client 0: your move
+Sent Message Client 1: opponents move
+Received Message Client 0: 4
+Sent Message Client 0: valid move,O,4
+Sent Message Client 1: valid move,O,4
+Sent Message Client 1: your move
+Sent Message Client 0: opponents move
+Received Message Client 1: 2
+Sent Message Client 1: valid move,X,2
+Sent Message Client 0: valid move,X,2
+Sent Message Client 0: game over,X
+Sent Message Client 1: game over,X
+Sent Message Client 0: play again
+Sent Message Client 1: play again
+Received Message Client 0: n
+ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
+
+Game Server is being restarted.
+
+*** OXO GAME SERVER STARTED ***
+Waiting for client connections.
+Connected Client 0: ('127.0.0.1', 51733)
+Connected Client 1: ('127.0.0.1', 51836)
+Sent Message Client 1: new game,O
+Sent Message Client 0: new game,X
+Sent Message Client 1: your move
+Sent Message Client 0: opponents move
+Received Message Client 1: 0
+Sent Message Client 1: valid move,O,0
+Sent Message Client 0: valid move,O,0
+Sent Message Client 0: your move
+Sent Message Client 1: opponents move
+Received Message Client 0: 1
+Sent Message Client 0: valid move,X,1
+Sent Message Client 1: valid move,X,1
+Sent Message Client 1: your move
+Sent Message Client 0: opponents move
+Received Message Client 1: 4
+Sent Message Client 1: valid move,O,4
+Sent Message Client 0: valid move,O,4
+Sent Message Client 0: your move
+Sent Message Client 1: opponents move
 ERROR:[WinError 10054] An existing connection was forcibly closed by the remote host
 
 Game Server is being restarted.

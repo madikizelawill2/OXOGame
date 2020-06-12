@@ -304,22 +304,22 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
             # get results for the winner
             self.winner = msg[-1]
 
-            # check if the winner is X or O
-            if self.winner == "O" or self.winner == "X":
                 
-                if self.shape == self.winner:
-                    #self.sounds["win"].play()
-                    self.fd = "YOU WIN"
-                elif self.shape != self.winner:
-                    #self.sounds["lose"].play()
-                    self.fd = "YOU LOST"
+            if self.shape == self.winner:
+                #self.sounds["win"].play()
+                self.fd = "YOU WIN"
+                self.messages_from_server.insertPlainText("=>Game Over!\n=>Thank you for playing, the winner is " + self.winner + "\n")
+
+            elif self.shape != self.winner:
+                #self.sounds["lose"].play()
+                self.fd = "YOU LOST"
                 # return the winner
                 self.messages_from_server.insertPlainText("=>Game Over!\n=>Thank you for playing, the winner is " + self.winner + "\n")
 
             # if there is no winner - it's a Tie
             else: 
+                self.fd = "Its a tie"
                 self.messages_from_server.insertPlainText("=>Game Over!\n=>Thank you for playing, it's a Tie :) \n")
-            
             
         # see if the player wants to play again
         elif msg == "play again":
@@ -419,8 +419,11 @@ QLineEdit {
     padding: 16px;
     outline: none;
     border: none;
-QMessage {
+QMessage    
     background: #8C8C8C;
+    color: #fff;
+    outline: none;
+
 }
 
 }
