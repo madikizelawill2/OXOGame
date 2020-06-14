@@ -63,6 +63,8 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
         self.server_url_input.setPlaceholderText("enter server name")
         # button to connect to server
         self.connect_button = QPushButton("Connect")
+        # set Object Name for connect name
+        self.connect_button.setObjectName("connect")
         # connect the button to report action when pressed
         self.connect_button.clicked.connect(self.connect)
 
@@ -102,7 +104,8 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
         self.character.setEnabled(True)
 
         # button to exit the game 
-        self.exit_button = QPushButton("Exit")
+        self.exit_button = QPushButton("Exit")\
+        # set ObjectName for exit button
         self.exit_button.setObjectName("exit")
         # connect the button to report action when pressed
         self.exit_button.clicked.connect(self.exit)
@@ -169,6 +172,8 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
         self.detail_character_grid.addWidget(self.messages_from_server, 3, 0)
         self.detail_character_grid_widget = QWidget()
         self.detail_character_grid_widget.setLayout(self.detail_character_grid)
+
+        self.decision = None
 
         # character layout information
         self.character_layout = QGridLayout()
@@ -237,9 +242,9 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
         # sends the infomation of the clicked button to server
         self.send_message(self.button.objectName())
     
-    def input_play_again(self):
+    def input_play_again(self,decision):
         # pop up message after the Game is over, asking if the users are willing to play again
-        self.user_response = QMessageBox.question(self,"Game Over","Results\n"+ self.fd +"\nDo you wish to play again?",QMessageBox.Yes|QMessageBox.No)
+        self.user_response = QMessageBox.question(self,"Game Over","Results\n"+ decision +"\nDo you wish to play again?",QMessageBox.Yes|QMessageBox.No)
         
         # assign each button to a variable to anable the server to communicate
         if self.user_response == QMessageBox.Yes:
@@ -280,16 +285,14 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
             # get position from player
             self.position = msg[-1]
 
-            # get the character of the player
-            self.shape = msg[-3]
-
             # locate the button that is clicked
             self.clicked_button = self.board_widget.findChild(QToolButton, str(self.position)) 
 
             # Place an Icon to the clicked button
-            if self.shape == "X":
+            # msg[-1], is the shape 
+            if msg[-3]== "X": 
                 self.clicked_button.setIcon(self.x)
-            elif self.shape == "O":
+            elif msg[-3] == "O":
                 self.clicked_button.setIcon(self.o)
             
         # position choosen is invalid
@@ -300,32 +303,49 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
             
         # indicates that the game is over
         elif msg[:msg.find(",")] == "game over":
+            # disable the game board
             self.board_widget.setEnabled(False)
             # get results for the winner
-            self.winner = msg[-1]
+            self.winner = msg[-1] # X
 
-                
-            if self.shape == self.winner:
+            # checks which character wins
+            if self.shape == self.winner: 
+                # play sound that indicates that the play won
                 #self.sounds["win"].play()
-                self.fd = "YOU WIN"
-                self.messages_from_server.insertPlainText("=>Game Over!\n=>Thank you for playing, the winner is " + self.winner + "\n")
-
-            elif self.shape != self.winner:
-                #self.sounds["lose"].play()
-                self.fd = "YOU LOST"
-                # return the winner
-                self.messages_from_server.insertPlainText("=>Game Over!\n=>Thank you for playing, the winner is " + self.winner + "\n")
-
+                # set decision, to let know the user won
+                self.decision = "YOU WIN"
+                # print the decision to the text that shows messages from server
+                self.messages_from_server.insertPlainText("=>Game Over!\n=>Thank you for playing," + self.decision + "\n")
+           
+            
+            # elif self.shape != self.winner:
+            #     # play sound that indicates that the play lost
+            #     self.sounds["lose"].play()
+            #     # set decision, to let know the user lost
+            #     self.decision = "YOU LOST"
+            #     # print the decision to the text that shows messages from server
+            #     self.messages_from_server.insertPlainText("=>Game Over!\n=>Thank you for playing," + self.decision + "\n")
+        
             # if there is no winner - it's a Tie
-            else: 
-                self.fd = "Its a tie"
-                self.messages_from_server.insertPlainText("=>Game Over!\n=>Thank you for playing, it's a Tie :) \n")
+            elif self.winner == "T" : 
+                self.decision = "Its a tie"
+                self.messages_from_server.insertPlainText("=>Game Over!\n=>Thank you for playing,It's a Tie :) \n")
+            
+            # checks which character looses
+            else:
+                # play sound that indicates that the play lost
+                #self.sounds["lose"].play()
+                # set decision, to let know the user lost
+                self.decision = "YOU LOST"
+                # print the decision to the text that shows messages from server
+                self.messages_from_server.insertPlainText("=>Game Over!\n=>Thank you for playing," + self.decision + "\n")
+
             
         # see if the player wants to play again
         elif msg == "play again":
 
             # show the pop_message, ask the users if they are willing to play again
-            self.input_play_again()
+            self.input_play_again(self.decision)
             
             if self.feedback == 'y':
                 self.clear_board()
@@ -357,7 +377,15 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
 
 # Global styles
 stylesheet = """
-QPushButton {
+#connect {
+    background: #004156;
+    border: none;
+    padding: 16px;
+    color: #4A586E;
+    font-size: 12px;
+    font-weight: bold;
+}
+#exit {
     background: #004156;
     border: none;
     padding: 16px;
@@ -370,19 +398,13 @@ QPushButton {
     border: 1px solid #48CFAF;
     padding: 16px;
 }
-QPushButton::hover {
+#exit::hover {
     border: 1px solid #48CFAF;
     color: #01142F;
 }
-QPushButton:pressed {
-    background: #09203F;
-    padding: 16px;
-    color: #000;
-    font-size: 12px;
-}
-QPushButton:checked {
-    background:#09203F;
-    padding: 16px; 
+#connect::hover {
+    border: 1px solid #48CFAF;
+    color: #01142F;
 }
 QToolButton {
     background: #4A586E;
@@ -419,12 +441,12 @@ QLineEdit {
     padding: 16px;
     outline: none;
     border: none;
-QMessage    
-    background: #8C8C8C;
+}
+QMessageBox {   
+    background: #09203F;
+    text-align: center;
     color: #fff;
     outline: none;
-
-}
 
 }
 """
