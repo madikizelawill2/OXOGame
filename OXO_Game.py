@@ -303,28 +303,24 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
             
         # indicates that the game is over
         elif msg[:msg.find(",")] == "game over":
+
             # disable the game board
             self.board_widget.setEnabled(False)
-            # get results for the winner
+
+            # get results from server log for the winner
             self.winner = msg[-1] # X
 
             # checks which character wins
             if self.shape == self.winner: 
-                # play sound that indicates that the play won
-                #self.sounds["win"].play()
+
                 # set decision, to let know the user won
                 self.decision = "YOU WIN"
+
+                # play sound that indicates that the play won
+                #self.sounds["win"].play()
+                
                 # print the decision to the text that shows messages from server
                 self.messages_from_server.insertPlainText("=>Game Over!\n=>Thank you for playing," + self.decision + "\n")
-           
-            
-            # elif self.shape != self.winner:
-            #     # play sound that indicates that the play lost
-            #     self.sounds["lose"].play()
-            #     # set decision, to let know the user lost
-            #     self.decision = "YOU LOST"
-            #     # print the decision to the text that shows messages from server
-            #     self.messages_from_server.insertPlainText("=>Game Over!\n=>Thank you for playing," + self.decision + "\n")
         
             # if there is no winner - it's a Tie
             elif self.winner == "T" : 
@@ -363,6 +359,8 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
             self.close()
             # passage time
             sleep(5)
+    
+
     
     def play_loop(self):
         while True:
