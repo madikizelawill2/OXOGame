@@ -2,6 +2,7 @@
 # Will Madikizela
 
 import sys
+from PyQt5.Qt import Qt
 from PyQt5.QtWidgets import*
 from PyQt5.QtCore import*
 from PyQt5.QtGui import*
@@ -38,7 +39,8 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
         self.setFixedSize(850, 350)
         # default font
         self.setFont(QFont("arial", 10, weight = QFont.Bold))
-
+        
+        
         self.sounds = dict(play=QSound("play.wav"),
                            win=QSound("win.wav"),
                            lose=QSound("lose.wav"))
@@ -57,6 +59,8 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
         self.server_input_label = QLabel("Server:") 
         # server input 
         self.server_url_input = QLineEdit()
+        # reurn pressed to allow the user to press 'Enter' key to connect
+        self.server_url_input.returnPressed.connect(self.connect)
         # allow a button to clear all the text at once
         self.server_url_input.setClearButtonEnabled(True)
         # place holder in the input for server for more intructions
@@ -104,11 +108,11 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
         self.character.setEnabled(True)
 
         # button to exit the game 
-        self.exit_button = QPushButton("Exit")\
+        self.exit_button = QPushButton("Exit")
         # set ObjectName for exit button
         self.exit_button.setObjectName("exit")
         # connect the button to report action when pressed
-        self.exit_button.clicked.connect(self.exit)
+        self.exit_button.clicked.connect(self.closeEvent)
 
         # board buttons
         self.board = QGridLayout()
@@ -143,9 +147,12 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
         for button in self.allButtons:
             # connect each button to report feedback when pressed
             button.clicked.connect(self.buttons)
-        
+
+
+        """ empty variables that will hold the decision and the shape of the user """
+        self.decision = None
         self.shape = None
-        #self.board = [' '] * BOARD_SIZE
+    
         self.loop_thread = LoopThread()
         self.loop_thread.msg_signal.connect(self.handle_message)
 
@@ -172,8 +179,6 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
         self.detail_character_grid.addWidget(self.messages_from_server, 3, 0)
         self.detail_character_grid_widget = QWidget()
         self.detail_character_grid_widget.setLayout(self.detail_character_grid)
-
-        self.decision = None
 
         # character layout information
         self.character_layout = QGridLayout()
@@ -220,10 +225,28 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
         self.board_widget.setEnabled(False)
 
     def clear_board(self):
-        for button in self.allButtons:
+        # clears the board game to allow NewGame option 
+        for button in self.allButtons: # iterate each button
             button.setText("")
             button.setIcon(QIcon())
             button.setEnabled(True)
+
+    def closeEvent(self):
+        # generates a question when exit button is clicked
+        reply = QMessageBox.question(
+            self, "Message",
+            "Are you sure you want to Exit?",
+            QMessageBox.Yes | QMessageBox.No
+        )
+        if reply == QMessageBox.Yes:
+            self.exit()
+        else:
+            pass
+    
+    def keyPressEnter(self, event):
+        # close application from Escape key
+        if event.key() == Qt.key_Escape:
+            self.close()
 
     # fuction for connect button
     def connect(self):
@@ -244,7 +267,12 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
     
     def input_play_again(self,decision):
         # pop up message after the Game is over, asking if the users are willing to play again
-        self.user_response = QMessageBox.question(self,"Game Over","Results\n"+ decision +"\nDo you wish to play again?",QMessageBox.Yes|QMessageBox.No)
+        self.user_response = QMessageBox.question(
+            self,
+            "Game Over",
+            "                 Results \n              "+ decision +"\nDo you wish to play again?",
+            QMessageBox.Yes|QMessageBox.No
+        )
         
         # assign each button to a variable to anable the server to communicate
         if self.user_response == QMessageBox.Yes:
@@ -256,7 +284,10 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
         
         # indicates the new game is about to start
         if msg[:msg.find(",")] == "new game":
+
+            # disable the game board
             self.board_widget.setEnabled(False)
+
             # gets the shape from the message
             self.shape = msg[-1]
             if self.shape == 'O':
@@ -264,21 +295,30 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
             else:
                 self.character.setIcon(self.x)
 
-                # a statement indicating the player's character
+            # a statement indicating the player's character
             self.messages_from_server.insertPlainText("=>The game is about to begin your character is " + self.shape + "\n")
-        
+            self.messages_from_server.moveCursor(QTextCursor.End)
+
         # indicates its the clients move
         elif msg == "your move":
+
+            # Enable the game board
             self.board_widget.setEnabled(True)
+
             # let the player know its their time to move
             self.messages_from_server.insertPlainText("=>It's your turn to move\n")
-  
+            self.messages_from_server.moveCursor(QTextCursor.End)
+
         # indicates its the opponents move
         elif msg == "opponents move":
+
+            # disable the game board
             self.board_widget.setEnabled(False)
+
             # let the player know, the opponent player is about to move
             self.messages_from_server.insertPlainText("=>Waiting for the opponent to move...\n")
-            
+            self.messages_from_server.moveCursor(QTextCursor.End)  
+
         # possition choosen is valid 
         elif msg[:msg.find(",")] == "valid move":
 
@@ -300,7 +340,8 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
 
             # position unavailable on the board
             self.messages_from_server.insertPlainText("=>You can't go there. Try again.\n")
-            
+            self.messages_from_server.moveCursor(QTextCursor.End)
+
         # indicates that the game is over
         elif msg[:msg.find(",")] == "game over":
 
@@ -317,25 +358,34 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
                 self.decision = "YOU WIN"
 
                 # play sound that indicates that the play won
-                #self.sounds["win"].play()
+                self.sounds["win"].play()
                 
                 # print the decision to the text that shows messages from server
                 self.messages_from_server.insertPlainText("=>Game Over!\n=>Thank you for playing," + self.decision + "\n")
-        
+                self.messages_from_server.moveCursor(QTextCursor.End)
+
             # if there is no winner - it's a Tie
-            elif self.winner == "T" : 
-                self.decision = "Its a tie"
+            elif self.winner == "T" :
+
+                # set decision to tie 
+                self.decision = "IT'S A TIE"
+
+                # print the decision to the text that shows messages from server
                 self.messages_from_server.insertPlainText("=>Game Over!\n=>Thank you for playing,It's a Tie :) \n")
-            
+                self.messages_from_server.moveCursor(QTextCursor.End)
+
             # checks which character looses
             else:
+
                 # play sound that indicates that the play lost
-                #self.sounds["lose"].play()
+                self.sounds["lose"].play()
+
                 # set decision, to let know the user lost
                 self.decision = "YOU LOST"
+
                 # print the decision to the text that shows messages from server
                 self.messages_from_server.insertPlainText("=>Game Over!\n=>Thank you for playing," + self.decision + "\n")
-
+                self.messages_from_server.moveCursor(QTextCursor.End)
             
         # see if the player wants to play again
         elif msg == "play again":
@@ -343,10 +393,13 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
             # show the pop_message, ask the users if they are willing to play again
             self.input_play_again(self.decision)
             
+            # clear the board if the user said Yes
             if self.feedback == 'y':
                 self.clear_board()
+            # close the window if the user said No
             elif self.feedback == 'n':
                 self.close()
+
             # send feedback to the server
             self.send_message(self.feedback)
 
@@ -356,12 +409,13 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
 
             # message displayed if the other player exit game or is taking too long to play
             self.messages_from_server.insertPlainText("=>One of the players does not wish to continue\n")
+            self.messages_from_server.moveCursor(QTextCursor.End)
             self.close()
             # passage time
             sleep(5)
     
 
-    
+
     def play_loop(self):
         while True:
             msg = self.receive_message()
@@ -441,9 +495,9 @@ QLineEdit {
     border: none;
 }
 QMessageBox {   
-    background: #09203F;
+    background: #B7D4FF;
     text-align: center;
-    color: #fff;
+    color: red;
     outline: none;
 
 }
@@ -454,6 +508,6 @@ OXO = OxoGame()
 def main():
     app.setStyleSheet(stylesheet)
     OXO.show()
-    OXO.messages_from_server.insertPlainText("=>Enter server name to connect and press connect button to activate your server\n")
+    OXO.messages_from_server.insertPlainText("=>Enter server name to connect and press 'ENTER' key or press connect button to activate your server.\n")
     sys.exit(app.exec_())
 main()
