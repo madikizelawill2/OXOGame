@@ -109,10 +109,15 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
 
         # button to exit the game 
         self.exit_button = QPushButton("Exit")
+        # help button
+        self.help_button = QPushButton("help")
+        # set Object for help button
+        self.help_button.setObjectName("help")
         # set ObjectName for exit button
         self.exit_button.setObjectName("exit")
         # connect the button to report action when pressed
         self.exit_button.clicked.connect(self.closeEvent)
+        self.help_button.clicked.connect(self.help_button_clicked)
 
         # board buttons
         self.board = QGridLayout()
@@ -202,6 +207,7 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
         self.button_horizontalBox = QHBoxLayout()
         # exit button
         self.button_horizontalBox.addWidget(self.exit_button)
+        self.button_horizontalBox.addWidget(self.help_button)
         self.button_horizontalBox_widget = QWidget()
         self.button_horizontalBox_widget.setLayout(self.button_horizontalBox)
 
@@ -393,17 +399,18 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
             # show the pop_message, ask the users if they are willing to play again
             self.input_play_again(self.decision)
             
-            # clear the board if the user said Yes
+            # if the user wants to play again
             if self.feedback == 'y':
-                self.clear_board()
-            # close the window if the user said No
-            elif self.feedback == 'n':
-                self.close()
+                try:self.send_message(self.feedback)
+                except:self.server_connection_lost()
+                else:self.clear_board()
 
-            # send feedback to the server
-            self.send_message(self.feedback)
+            # if the user does not want to play again
+            else:
+                self.feedback == 'n'
+                try:self.send_message(self.feedback)
+                except:self.server_connection_lost()
 
-        
         # terminate the game
         elif msg == "exit game":
 
@@ -413,16 +420,59 @@ class OxoGame(QWidget, GameClient): # inherits from QWidgets and gameclient
             self.close()
             # passage time
             sleep(5)
+
+    # when the opponent disconect from the game
+    def player_lost_connection(self):
+        # displays the text to the server message text box
+        self.messages_from_server.insertPlainText("=>Looks like your opponent disconnected\n")
+        # closes the server
+        self.socket.close()
+        self.messages_from_server.moveCursor(QTextCursor.End)
+        # clears the board
+        self.clear_board()
+        self.socket = socket(AF_INET, SOCK_STREAM)
+        self.board_widget.setEnabled(False) # disable the board
+        self.connect_button.setEnabled(False) # disable the connect button
+
+    # when the host closes the server
+    def server_connection_lost(self):
+        # disaplays the text to the server text box
+        self.messages_from_server.insertPlainText("=>server disconnected!\n")
+        # closes the server
+        self.socket.close()
+        self.messages_from_server.moveCursor(QTextCursor.End)
+        # clears the board
+        self.clear_board()
+        self.socket = socket(AF_INET, SOCK_STREAM)
+        self.board_widget.setEnabled(False) # disable the board
+        self.connect_button.setEnabled(False) # disable the connect button
+
+    # gives the user all the details they need to connect to server and how to play game 
+    def help_button_clicked(self):
+        # create a pop up dialog 
+        message = QMessageBox() 
+        # set title of the window
+        message.setWindowTitle("Game Intructions")
+        # the first text that will appear when the window shows up
+        message.setText("""=>Two players must play the game, and one must activate server
+=>One player must enter the name of the local server eg 127.0.0.1
+=>The other player must enter the server name of the host
+=>Both the host and the player who joined must connect to server""")
+        # message in the button for more details about the game 
+        message.setDetailedText("""=> The game is played on a grid that's 3 squares by 3 squares.
+=> You will be given a character between X or O,  Players take turns putting their marks in empty squares.
+=> The first player to get 3 of his/her marks in a row (up, down, across, or diagonally) is the winner.
+=> When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.""")
+        message.exec_()
     
-
-
     def play_loop(self):
         while True:
             msg = self.receive_message()
             if len(msg): self.handle_message(msg)
-            else: break
+            else:
+                self.player_lost_connection() 
+                break
         
-          
     # fuction for exit button
     def exit(self):
         self.close()
@@ -445,6 +495,19 @@ stylesheet = """
     font-size: 12px;
     font-weight: bold;
 }
+#help{
+    background: #004156;
+    border: none;
+    padding: 16px;
+    color: #4A586E;
+    font-size: 12px;
+    font-weight: bold;
+}
+#help::hover {
+    border: 1px solid #48CFAF;
+    color: #01142F;
+}
+
 #character {
     background: #09203F;
     border: 1px solid #48CFAF;
